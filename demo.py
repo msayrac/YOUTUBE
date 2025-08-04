@@ -6,7 +6,6 @@ SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Insert a new row into table
-
 # new_row = {'first_name': 'John Doe'}
 # supabase.table('demo-table').insert(new_row).execute()
 
@@ -15,17 +14,15 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 # supabase.table('demo-table').update(new_row).eq('id',2).execute()
 
 # Delete record
-supabase.table('demo-table').delete().eq('id',2).execute()
+# supabase.table('demo-table').delete().eq('id',2).execute()
 
 # Fetch all record
-results = supabase.table('demo-table').select('*').execute()
-print(results)
+# results = supabase.table('demo-table').select('*').execute()
+# print(results)
 
+response = supabase.storage.from_('demo-bucket').get_public_url('1.jpg')
 
-
-
-
-
+print(response)
 
 
 
